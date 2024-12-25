@@ -23,6 +23,7 @@ CREATE TABLE table_net (
     show_description VARCHAR(1000)
 );
 ```
+![table]()
 ##-- Query 1: Total number of movies and TV shows in the dataset
 ```sql
 SELECT show_type, COUNT(*) 
