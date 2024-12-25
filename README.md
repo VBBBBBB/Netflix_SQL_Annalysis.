@@ -168,14 +168,16 @@ LIMIT 10;
 ![q16](https://github.com/VBBBBBB/Netflix_SQL_Annalysis./blob/main/16.png)
 ##-- Query 17: Average duration of movies in different genres
 ```sql
-SELECT genre, AVG(CAST(SUBSTRING(duration FROM '^\d+') AS INTEGER)) AS avg_duration
-FROM table_net, LATERAL unnest(string_to_array(listed_in, ',')) AS genre
+SELECT genre,
+       AVG(CAST(SUBSTRING(duration FROM '^\d+') AS INTEGER)) AS avg_duration
+FROM table_net,
+     LATERAL unnest(string_to_array(listed_in, ',')) AS genre
 WHERE show_type = 'Movie' AND duration IS NOT NULL
 GROUP BY genre
 ORDER BY avg_duration DESC
-LIMIT 10;
+limit 10;
 ```
-![q17](https://github.com/VBBBBBB/Netflix_SQL_Annalysis./blob/main/17.png)
+![q17](https://github.com/VBBBBBB/Netflix_SQL_Annalysis./blob/main/Screenshot%202024-12-25%20143443.png)
 ##-- Query 18: Percentage of movies and TV shows with 'R' rating
 ```sql
 SELECT show_type, 
