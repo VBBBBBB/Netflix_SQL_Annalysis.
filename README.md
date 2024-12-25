@@ -6,7 +6,8 @@
 This project demonstrates various SQL queries to analyze the Netflix dataset and extract meaningful insights. The dataset was analyzed using SQL to answer questions such as the most common ratings, top directors, release trends, and more.
 
 
--- Create table to hold Netflix data
+##-- Create table to hold Netflix data
+'''sql
 CREATE TABLE table_net (
     show_id VARCHAR(1000),
     show_type VARCHAR(1000),
@@ -21,7 +22,7 @@ CREATE TABLE table_net (
     listed_in VARCHAR(1000),
     show_description VARCHAR(1000)
 );
-
+'''
 -- Query 1: Total number of movies and TV shows in the dataset
 SELECT show_type, COUNT(*) 
 FROM table_net 
